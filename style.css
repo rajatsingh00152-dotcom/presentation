@@ -1,0 +1,296 @@
+/* ----------- GLOBAL RESET ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ----------- BACKGROUNDS ----------- */
+.gradient-bg {
+  background: linear-gradient(135deg, #9b5eff, #ff5eae, #ff8a5c);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-bg {
+  background: linear-gradient(120deg, #6e3aff, #e14eea, #ff7aa8);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ----------- NAVIGATION BAR ----------- */
+nav {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeDown 1s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #fff;
+  color: #6e3aff;
+}
+
+/* ----------- HERO SECTION ----------- */
+.hero {
+  text-align: center;
+  margin-top: 12%;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  margin: 15px 0 25px;
+  font-size: 1.1rem;
+}
+
+.cta-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.cta-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  color: #6e3aff;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------- CONTENT CARD (ABOUT/CONTACT) ----------- */
+.content-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 50px;
+  margin: 80px auto;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 1.2s ease;
+}
+
+.content-card h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.content-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ----------- FORM CONTAINERS ----------- */
+.form-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 50px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 1s ease;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #ff6ec7, #a83aff);
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #a83aff, #ff6ec7);
+  transform: translateY(-2px);
+}
+
+.checkbox {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+p a {
+  color: #ffe6ff;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+p a:hover {
+  color: #fff;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  color: #f1f1f1;
+}
+
+/* ----------- RESPONSIVE DESIGN ----------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero {
+    margin-top: 20%;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .content-card,
+  .form-container {
+    width: 95%;
+    padding: 30px;
+  }
+}
